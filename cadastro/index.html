@@ -68,70 +68,6 @@ src="https://www.facebook.com/tr?id=1263354620932552&ev=PageView&noscript=1"
             document.head.appendChild(s)
         </script>
 
-        <style>
-          .esconder {
-            display: none;
-          }
-        </style>
-
-        <script type="text/javascript">
-          document.addEventListener('DOMContentLoaded', function () {
-            /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-            var SECONDS_TO_DISPLAY = 1755;
-            var CLASS_TO_DISPLAY = '.esconder'
-
-            /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
-            var attempts = 0
-            var elsHiddenList = []
-            var elsDisplayed = false
-            var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY)
-            var alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
-            var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey)
-
-            setTimeout(function () {
-              elsHiddenList = Array.prototype.slice.call(elsHidden)
-            }, 0)
-
-            var showHiddenElements = function () {
-              elsDisplayed = true
-              elsHiddenList.forEach(e => (e.style.display = 'block'))
-              localStorage.setItem(alreadyDisplayedKey, true)
-            }
-
-            var startWatchVideoProgress = function () {
-              if (
-                typeof smartplayer === 'undefined' ||
-                !(smartplayer.instances && smartplayer.instances.length)
-              ) {
-                if (attempts >= 10) return
-                attempts += 1
-                return setTimeout(function () {
-                  startWatchVideoProgress()
-                }, 1000)
-              }
-
-              smartplayer.instances[0].on('timeupdate', () => {
-                if (elsDisplayed || smartplayer.instances[0].smartAutoPlay)
-                  return
-                if (
-                  smartplayer.instances[0].video.currentTime <
-                  SECONDS_TO_DISPLAY
-                )
-                  return
-                showHiddenElements()
-              })
-            }
-
-            if (alreadyElsDisplayed === 'true') {
-              setTimeout(function () {
-                showHiddenElements()
-              }, 100)
-            } else {
-              startWatchVideoProgress()
-            }
-          })
-        </script>
-
         <div class="mt-lg- mt-sm-2 hide-after">
           <p class="audio strong">
             <img src="assets/img/audio.webp" alt="audio" />
@@ -824,7 +760,7 @@ src="https://www.facebook.com/tr?id=1263354620932552&ev=PageView&noscript=1"
     </section>
 </div>
     <script>
-      const d = 1715
+      const d = 10
       //scripts
     </script>
     <script src="js/e.js" charset="utf-8"></script>
