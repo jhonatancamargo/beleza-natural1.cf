@@ -73,7 +73,7 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
             (s.async = !0),
             document.head.appendChild(s)
         </script>
-  <style>
+ <style>
   .esconder {
     display: none;
   }
@@ -89,32 +89,27 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
 
     /* DAQUI PARA BAIXO NÃO PRECISA ALTERAR */
     var elsHiddenList = [];
-    var elsDisplayed = false;
     var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
-    var alreadyDisplayedKey = `alreadyElsDisplayed${TOTAL_SECONDS}`;
-    var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
 
     setTimeout(function () {
       elsHiddenList = Array.prototype.slice.call(elsHidden);
+      startWatchVideoProgress();
     }, 0);
 
-    var showHiddenElements = function () {
-      elsDisplayed = true;
+    function showHiddenElements() {
       elsHiddenList.forEach(e => (e.style.display = 'block'));
-      localStorage.setItem(alreadyDisplayedKey, true);
-    };
+    }
 
-    if (alreadyElsDisplayed === 'true') {
-      showHiddenElements();
-    } else {
+    function startWatchVideoProgress() {
       var videoElement = document.querySelector('video');
+
       if (videoElement) {
-        videoElement.addEventListener('timeupdate', function () {
-          if (elsDisplayed || videoElement.paused) return;
+        var interval = setInterval(function () {
           if (videoElement.currentTime >= TOTAL_SECONDS) {
             showHiddenElements();
+            clearInterval(interval);
           }
-        });
+        }, 1000);
       }
     }
   });
