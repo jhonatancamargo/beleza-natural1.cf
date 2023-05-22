@@ -75,6 +75,7 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
         </script>
 
         <style>
+  <style>
   .esconder {
     display: none;
   }
@@ -89,7 +90,6 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
     var CLASS_TO_DISPLAY = '.esconder';
 
     /* DAQUI PARA BAIXO NÃO PRECISA ALTERAR */
-    var attempts = 0;
     var elsHiddenList = [];
     var elsDisplayed = false;
     var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
@@ -106,24 +106,19 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
       localStorage.setItem(alreadyDisplayedKey, true);
     };
 
-    var startWatchVideoProgress = function () {
-      var videoElement = document.querySelector('video');
-
-      if (!videoElement) return;
-
+    var videoElement = document.querySelector('video');
+    if (videoElement) {
       videoElement.addEventListener('timeupdate', function () {
         if (elsDisplayed || videoElement.paused) return;
         if (videoElement.currentTime < TOTAL_SECONDS) return;
         showHiddenElements();
       });
-    };
+    }
 
     if (alreadyElsDisplayed === 'true') {
       setTimeout(function () {
         showHiddenElements();
       }, 100);
-    } else {
-      startWatchVideoProgress();
     }
   });
 </script>
