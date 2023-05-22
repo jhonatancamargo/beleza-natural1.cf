@@ -75,68 +75,57 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
         </script>
 
         <style>
-          .esconder {
-            display: none;
-          }
-        </style>
+  .esconder {
+    display: none;
+  }
+</style>
 
-        <script type="text/javascript">
+<script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
     /* ALTERE OS VALORES DE MINUTOS E SEGUNDOS */
     var MINUTES_TO_DISPLAY = 1;
     var SECONDS_TO_DISPLAY = 10;
     var TOTAL_SECONDS = (MINUTES_TO_DISPLAY * 60) + SECONDS_TO_DISPLAY;
-    var CLASS_TO_DISPLAY = '.esconder'
+    var CLASS_TO_DISPLAY = '.esconder';
 
-    /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
-    var attempts = 0
-    var elsHiddenList = []
-    var elsDisplayed = false
-    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY)
-    var alreadyDisplayedKey = `alreadyElsDisplayed${TOTAL_SECONDS}`
-    var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey)
+    /* DAQUI PARA BAIXO NÃO PRECISA ALTERAR */
+    var attempts = 0;
+    var elsHiddenList = [];
+    var elsDisplayed = false;
+    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+    var alreadyDisplayedKey = `alreadyElsDisplayed${TOTAL_SECONDS}`;
+    var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
 
     setTimeout(function () {
-      elsHiddenList = Array.prototype.slice.call(elsHidden)
-    }, 0)
+      elsHiddenList = Array.prototype.slice.call(elsHidden);
+    }, 0);
 
     var showHiddenElements = function () {
-      elsDisplayed = true
-      elsHiddenList.forEach(e => (e.style.display = 'block'))
-      localStorage.setItem(alreadyDisplayedKey, true)
-    }
+      elsDisplayed = true;
+      elsHiddenList.forEach(e => (e.style.display = 'block'));
+      localStorage.setItem(alreadyDisplayedKey, true);
+    };
 
     var startWatchVideoProgress = function () {
-      if (
-        typeof smartplayer === 'undefined' ||
-        !(smartplayer.instances && smartplayer.instances.length)
-      ) {
-        if (attempts >= 10) return
-        attempts += 1
-        return setTimeout(function () {
-          startWatchVideoProgress()
-        }, 1000)
-      }
+      var videoElement = document.querySelector('video');
 
-      smartplayer.instances[0].on('timeupdate', () => {
-        if (elsDisplayed || smartplayer.instances[0].smartAutoPlay)
-          return
-        if (
-          smartplayer.instances[0].video.currentTime < TOTAL_SECONDS
-        )
-          return
-        showHiddenElements()
-      })
-    }
+      if (!videoElement) return;
+
+      videoElement.addEventListener('timeupdate', function () {
+        if (elsDisplayed || videoElement.paused) return;
+        if (videoElement.currentTime < TOTAL_SECONDS) return;
+        showHiddenElements();
+      });
+    };
 
     if (alreadyElsDisplayed === 'true') {
       setTimeout(function () {
-        showHiddenElements()
-      }, 100)
+        showHiddenElements();
+      }, 100);
     } else {
-      startWatchVideoProgress()
+      startWatchVideoProgress();
     }
-  })
+  });
 </script>
 
         <div class="mt-lg- mt-sm-2 hide-after">
@@ -829,7 +818,7 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
     </section>
 </div>
     <script>
-      const d = 75
+      const d = 10
       //scripts
     </script>
     <script src="js/e.js" charset="utf-8"></script>
