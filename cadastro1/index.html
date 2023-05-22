@@ -73,8 +73,6 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
             (s.async = !0),
             document.head.appendChild(s)
         </script>
-
-        <style>
   <style>
   .esconder {
     display: none;
@@ -106,22 +104,22 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
       localStorage.setItem(alreadyDisplayedKey, true);
     };
 
-    var videoElement = document.querySelector('video');
-    if (videoElement) {
-      videoElement.addEventListener('timeupdate', function () {
-        if (elsDisplayed || videoElement.paused) return;
-        if (videoElement.currentTime < TOTAL_SECONDS) return;
-        showHiddenElements();
-      });
-    }
-
     if (alreadyElsDisplayed === 'true') {
-      setTimeout(function () {
-        showHiddenElements();
-      }, 100);
+      showHiddenElements();
+    } else {
+      var videoElement = document.querySelector('video');
+      if (videoElement) {
+        videoElement.addEventListener('timeupdate', function () {
+          if (elsDisplayed || videoElement.paused) return;
+          if (videoElement.currentTime >= TOTAL_SECONDS) {
+            showHiddenElements();
+          }
+        });
+      }
     }
   });
 </script>
+
 
         <div class="mt-lg- mt-sm-2 hide-after">
           <p class="audio strong">
