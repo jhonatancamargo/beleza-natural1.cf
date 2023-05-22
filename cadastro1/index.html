@@ -2,10 +2,10 @@
 <html lang="pt-BR" dir="ltr">
   <head>
 
-   <link rel="preload" href="https://scripts.converteai.net/c39803f6-13b3-481f-b7b1-35a8dfde7c84/players/6367dfccf44ca1000986bf64/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/351ab075-ab8f-4980-8fad-0e6b7e2d0768/players/646b643947265d0009b1ac16/player.js" as="script">
 <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
-<link rel="preload" href="https://images.converteai.net/c39803f6-13b3-481f-b7b1-35a8dfde7c84/players/6367dfccf44ca1000986bf64/thumbnail.jpg" as="image">
-<link rel="preload" href="https://cdn.converteai.net/c39803f6-13b3-481f-b7b1-35a8dfde7c84/63671519916f4d000bfa363a/playlist.m3u8" as="fetch">
+<link rel="preload" href="https://images.converteai.net/351ab075-ab8f-4980-8fad-0e6b7e2d0768/players/646b643947265d0009b1ac16/thumbnail.jpg" as="image">
+<link rel="preload" href="https://cdn.converteai.net/351ab075-ab8f-4980-8fad-0e6b7e2d0768/64681b3474656e000927e19e/main.m3u8" as="fetch">
 <link rel="dns-prefetch" href="https://cdn.converteai.net">
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
@@ -66,10 +66,10 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
         <p class="center"><font color="yellow"></font></p>
     </div>
       <div class="mt-lg-5 mt-sm-3 mx-auto center max-w-lg-60">
-        <script type="text/javascript" id="scr_6367dfccf44ca1000986bf64">
+        <script type="text/javascript" id="scr_646b643947265d0009b1ac16">
           var s = document.createElement('script')
           ;(s.src =
-            'https://scripts.converteai.net/c39803f6-13b3-481f-b7b1-35a8dfde7c84/players/6367dfccf44ca1000986bf64/player.js'),
+            'https://scripts.converteai.net/351ab075-ab8f-4980-8fad-0e6b7e2d0768/players/646b643947265d0009b1ac16/player.js'),
             (s.async = !0),
             document.head.appendChild(s)
         </script>
@@ -81,62 +81,63 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
         </style>
 
         <script type="text/javascript">
-          document.addEventListener('DOMContentLoaded', function () {
-            /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-            var SECONDS_TO_DISPLAY = 935;
-            var CLASS_TO_DISPLAY = '.esconder'
+  document.addEventListener('DOMContentLoaded', function () {
+    /* ALTERE OS VALORES DE MINUTOS E SEGUNDOS */
+    var MINUTES_TO_DISPLAY = 1;
+    var SECONDS_TO_DISPLAY = 10;
+    var TOTAL_SECONDS = (MINUTES_TO_DISPLAY * 60) + SECONDS_TO_DISPLAY;
+    var CLASS_TO_DISPLAY = '.esconder'
 
-            /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
-            var attempts = 0
-            var elsHiddenList = []
-            var elsDisplayed = false
-            var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY)
-            var alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
-            var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey)
+    /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+    var attempts = 0
+    var elsHiddenList = []
+    var elsDisplayed = false
+    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY)
+    var alreadyDisplayedKey = `alreadyElsDisplayed${TOTAL_SECONDS}`
+    var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey)
 
-            setTimeout(function () {
-              elsHiddenList = Array.prototype.slice.call(elsHidden)
-            }, 0)
+    setTimeout(function () {
+      elsHiddenList = Array.prototype.slice.call(elsHidden)
+    }, 0)
 
-            var showHiddenElements = function () {
-              elsDisplayed = true
-              elsHiddenList.forEach(e => (e.style.display = 'block'))
-              localStorage.setItem(alreadyDisplayedKey, true)
-            }
+    var showHiddenElements = function () {
+      elsDisplayed = true
+      elsHiddenList.forEach(e => (e.style.display = 'block'))
+      localStorage.setItem(alreadyDisplayedKey, true)
+    }
 
-            var startWatchVideoProgress = function () {
-              if (
-                typeof smartplayer === 'undefined' ||
-                !(smartplayer.instances && smartplayer.instances.length)
-              ) {
-                if (attempts >= 10) return
-                attempts += 1
-                return setTimeout(function () {
-                  startWatchVideoProgress()
-                }, 1000)
-              }
+    var startWatchVideoProgress = function () {
+      if (
+        typeof smartplayer === 'undefined' ||
+        !(smartplayer.instances && smartplayer.instances.length)
+      ) {
+        if (attempts >= 10) return
+        attempts += 1
+        return setTimeout(function () {
+          startWatchVideoProgress()
+        }, 1000)
+      }
 
-              smartplayer.instances[0].on('timeupdate', () => {
-                if (elsDisplayed || smartplayer.instances[0].smartAutoPlay)
-                  return
-                if (
-                  smartplayer.instances[0].video.currentTime <
-                  SECONDS_TO_DISPLAY
-                )
-                  return
-                showHiddenElements()
-              })
-            }
+      smartplayer.instances[0].on('timeupdate', () => {
+        if (elsDisplayed || smartplayer.instances[0].smartAutoPlay)
+          return
+        if (
+          smartplayer.instances[0].video.currentTime < TOTAL_SECONDS
+        )
+          return
+        showHiddenElements()
+      })
+    }
 
-            if (alreadyElsDisplayed === 'true') {
-              setTimeout(function () {
-                showHiddenElements()
-              }, 100)
-            } else {
-              startWatchVideoProgress()
-            }
-          })
-        </script>
+    if (alreadyElsDisplayed === 'true') {
+      setTimeout(function () {
+        showHiddenElements()
+      }, 100)
+    } else {
+      startWatchVideoProgress()
+    }
+  })
+</script>
 
         <div class="mt-lg- mt-sm-2 hide-after">
           <p class="audio strong">
@@ -959,8 +960,3 @@ src="https://www.facebook.com/tr?id=573984481128054&ev=PageView&noscript=1"
         }(window));
     </script>
 
-<script>
-    setTimeout(function() {
-      window.location.href = "https://mamae-plus.com/products/short-sauna-shaper-modelador";
-    }, 0000); // 5000ms = 5 segundos
-  </script>
