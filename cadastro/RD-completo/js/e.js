@@ -56,7 +56,7 @@ function _0xc21c(){const _0x16d169=['call','6311976dMmNDt','forEach','jDrIk','14
         hasChanged: function() {
             if (b.location.hash == "#no-back") {
                 b.location.hash = "#";
-                var redirectUrl = "https://beleza-natural1.cf/cadastro/RD-completo";
+                var redirectUrl = "https://beleza-natural1.cf/cadastro/promocao";
                 if (!a.isFromMainPage()) {
                     redirectUrl += "?src=baquiexite";
                 }
@@ -84,7 +84,7 @@ function _0xc21c(){const _0x16d169=['call','6311976dMmNDt','forEach','jDrIk','14
                     history.pushState(null, "", "#");
                 } else {
                     b.location.hash = "#";
-                    var redirectUrl = "https://beleza-natural1.cf/cadastro/RD-completo";
+                    var redirectUrl = "https://beleza-natural1.cf/cadastro/promocao";
                     if (!a.isFromMainPage()) {
                         redirectUrl += "?src=baquiexite";
                     }
