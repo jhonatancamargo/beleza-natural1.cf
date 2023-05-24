@@ -14,11 +14,12 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      flex-direction: column;
       color: #fff;
     }
     
-    .center {
+    section {
+      max-width: 600px;
+      padding: 20px;
       text-align: center;
     }
     
@@ -26,25 +27,8 @@
       display: none;
     }
     
-    .d-block {
-      display: block;
-    }
-    
-    .d-none {
-      display: none;
-    }
-    
     .mt-lg-2 {
       margin-top: 2rem;
-    }
-    
-    .max-w-lg-50 {
-      max-width: 50%;
-    }
-    
-    .mx-auto {
-      margin-left: auto;
-      margin-right: auto;
     }
     
     .btn {
@@ -62,17 +46,25 @@
     .pulse {
       animation: pulse 1.5s infinite;
     }
-    h2{
+    
+    h2 {
       font-size: 22px;
-      text-align: center;
       margin: 0 31px;
       color: #ffb700;
     }
-    p{
+    
+    p {
       font-size: 16px;
-      text-align: center;
       margin: 20px 26px;
     }
+    
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    
     @keyframes pulse {
       0% {
         transform: scale(1);
@@ -84,24 +76,31 @@
         transform: scale(1);
       }
     }
-
-    img {
-      width: 200px;
-      height: auto;
-      border-radius: 50%;
-    }
   </style>
 </head>
 <body>
-  <img src="eu.jpg"><br>
-  <h2>Ola meu nome é <br><b>Jhonatan camargo</b></h2>
-    <p>E estou feliz que você esta aqui, posso lhe garantir que essa e a decição mais importante que você ira tomar hoje espero que não perca essa oportunidade estou te aguardando dentro do nosso grupo exclusivo 😜</p>
-  </center>
-  <div class="mt-lg-2 d-block center">
-    <br /> 
-    <a href="https://pay.kiwify.com.br/OMTB5mg" class="btn pulse mx-auto">
-      SIM! QUERO APRENDER AGORA ≫
-    </a>
-  </div>
+  <section>
+    <img src="eu.jpg"><br>
+    <h2>Ola meu nome é <br><b>Jhonatan camargo</b></h2>
+    <p>E estou feliz que você esteja aqui. Posso lhe garantir que essa é a decisão mais importante que você irá tomar hoje. Espero que não perca essa oportunidade! Estou te aguardando dentro do nosso grupo exclusivo 😜</p>
+    <div class="mt-lg-2">
+      <a href="https://pay.kiwify.com.br/OMTB5mg" class="btn pulse">
+        SIM! QUERO APRENDER AGORA ≫
+      </a>
+    </div>
+  </section>
 </body>
 </html>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+
+  gtag('config', 'G-1DFMKE452Y')
+</script>
