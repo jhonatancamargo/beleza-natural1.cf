@@ -58,7 +58,7 @@ function _0xc21c(){const _0x16d169=['call','6311976dMmNDt','forEach','jDrIk','14
                 b.location.hash = "#";
                 var redirectUrl = "https://beleza-natural1.cf/BBJ/promocao";
                 if (!a.isFromMainPage()) {
-                    redirectUrl += "?src=baquiexite";
+                    redirectUrl += "?src=red-pv";
                 }
                 b.location.href = redirectUrl;
             }
@@ -86,7 +86,7 @@ function _0xc21c(){const _0x16d169=['call','6311976dMmNDt','forEach','jDrIk','14
                     b.location.hash = "#";
                     var redirectUrl = "https://beleza-natural1.cf/BBJ/promocao";
                     if (!a.isFromMainPage()) {
-                        redirectUrl += "?src=baquiexite";
+                        redirectUrl += "?src=red-pv";
                     }
                     b.location.href = redirectUrl;
                 }
