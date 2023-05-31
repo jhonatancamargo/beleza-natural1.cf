@@ -88,6 +88,8 @@
             }
         }
         
+        
+
         /* Estilos para o tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­tulo h2 */
         .elementor-heading-title {
              
@@ -556,7 +558,8 @@ flex-direction: column;
 
 @media screen and (max-width: 600px) {
   .custom-button {
-    font-size: 16px; /* Ajuste o tamanho da fonte para dispositivos mÃƒÂ³veis */
+    font-size: 15px; /* Ajuste o tamanho da fonte para dispositivos mÃƒÂ³veis */
+    text-align: center;
   }
 }
 
@@ -585,4 +588,3 @@ flex-direction: column;
   margin: 0% 23%;
 }
     
-
