@@ -15,17 +15,8 @@
     if (document.cookie.indexOf('ab_test') !== -1) {
       var page = getCookie('ab_test');
     } else {
-      // Obtenha o número de visitas registradas
-      var visits = parseInt(localStorage.getItem('ab_visits')) || 0;
-
-      // Atribua a página com base no número de visitas
-      page = (visits % 2 === 0) ? 'A' : 'B';
-
-      // Incremente o número de visitas
-      visits++;
-
-      // Armazene o número de visitas
-      localStorage.setItem('ab_visits', visits);
+      // Atribua a página aleatoriamente
+      page = Math.random() < 0.5 ? 'A' : 'B';
 
       // Defina um cookie para lembrar a página atribuída ao usuário
       document.cookie = 'ab_test=' + page + '; expires=' + new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000).toUTCString(); // O cookie expira em 30 dias
