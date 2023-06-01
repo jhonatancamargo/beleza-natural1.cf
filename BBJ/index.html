@@ -11,18 +11,18 @@
 </head>
 <body>
   <script>
-    // Atribua a página aleatoriamente
-    var page = Math.random() < 0.5 ? 'A' : 'B';
+    // Lista de URLs de destino
+    var urls = [
+      'https://beleza-natural1.cf/BBJ-1',
+      'https://beleza-natural1.cf/BBJ-2'
+    ];
 
-    // Defina um cookie para lembrar a página atribuída ao usuário
-    document.cookie = 'ab_test=' + page + '; expires=' + new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000).toUTCString(); // O cookie expira em 30 dias
+    // Seleciona uma URL aleatória
+    var randomIndex = Math.floor(Math.random() * urls.length);
+    var randomUrl = urls[randomIndex];
 
-    // Redirecione o usuário imediatamente para a página correspondente
-    if (page === 'A') {
-      window.location.replace('https://beleza-natural1.cf/BBJ-1');
-    } else {
-      window.location.replace('https://beleza-natural1.cf/BBJ-2');
-    }
+    // Redireciona o usuário para a URL selecionada
+    window.location.replace(randomUrl);
   </script>
 </body>
 </html>
