@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teste A/B</title>
+  <style>
+    /* Oculta o elemento <h1> */
+    h1 {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Verifique se o usuário já foi atribuído a uma página
+    if (document.cookie.indexOf('ab_test') !== -1) {
+      var page = getCookie('ab_test');
+    } else {
+      // Obtenha o número de visitas registradas
+      var visits = parseInt(localStorage.getItem('ab_visits')) || 0;
+
+      // Atribua a página com base no número de visitas
+      page = (visits % 2 === 0) ? 'A' : 'B';
+
+      // Incremente o número de visitas
+      visits++;
+
+      // Armazene o número de visitas
+      localStorage.setItem('ab_visits', visits);
+
+      // Defina um cookie para lembrar a página atribuída ao usuário
+      document.cookie = 'ab_test=' + page + '; expires=' + new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000).toUTCString(); // O cookie expira em 30 dias
+    }
+
+    // Redirecione o usuário imediatamente para a página correspondente
+    if (page === 'A') {
+      window.location.replace('https://beleza-natural1.cf/BBJ-1');
+    } else {
+      window.location.replace('https://beleza-natural1.cf/BBJ-2');
+    }
+
+    // Função auxiliar para obter o valor de um cookie
+    function getCookie(name) {
+      var cookieArr = document.cookie.split(';');
+      for (var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split('=');
+        if (name === cookiePair[0].trim()) {
+          return decodeURIComponent(cookiePair[1]);
+        }
+      }
+      return null;
+    }
+  </script>
+</body>
+</html>
