@@ -75,7 +75,7 @@ window.addEventListener('resize', checkMobile);
                 b.location.hash = "#";
                 var redirectUrl = "https://beleza-natural1.cf/BBJ/promocao";
                 if (!a.isFromMainPage()) {
-                    redirectUrl += "?src=baquiexite";
+                    redirectUrl += "?src=red-2";
                 }
                 b.location.href = redirectUrl;
             }
@@ -103,7 +103,7 @@ window.addEventListener('resize', checkMobile);
                     b.location.hash = "#";
                     var redirectUrl = "https://beleza-natural1.cf/BBJ/promocao";
                     if (!a.isFromMainPage()) {
-                        redirectUrl += "?src=baquiexite";
+                        redirectUrl += "?src=red-2";
                     }
                     b.location.href = redirectUrl;
                 }
