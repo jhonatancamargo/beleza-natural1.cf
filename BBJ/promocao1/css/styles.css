@@ -6,7 +6,19 @@ body {
 .play-button {
   touch-action: manipulation;
 }
-
+.ct1 {
+    color: #00000075;
+    font-size: 29px;
+    font-weight: 700;
+    margin: 1px;
+}
+ .ct{
+    font-weight: 900;
+    font-size: 34px;
+    color: #18da2a;
+}
+}
+}
 
 .content-container {
    /* Espaço para o banner no topo */
@@ -43,6 +55,7 @@ header {
   .white-section h1 {
     font-size: 25px;
     line-height: 38px;
+    margin-top: -15px;
   }
 }
 
@@ -72,7 +85,7 @@ header {
   background-color: #000000;
   color: #ffffff;
   border: none;
-  padding: 20px;
+  padding: 10px;
 }
 
 .black-section p {
@@ -175,6 +188,12 @@ header {
   .video-container {
     flex-wrap: wrap; /* Permite que os vídeos sejam empilhados verticalmente */
   }
+  .ct1 {
+    color: #767460ba;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 1px;
+}
   .video-wrapper {
     width: 100%;
     height: auto;
