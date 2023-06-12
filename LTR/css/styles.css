@@ -1,0 +1,232 @@
+body {
+  font-family: roboto, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+.ct1 {
+  color: #00000075;
+  font-size: 29px;
+  font-weight: 700;
+  margin: 1px;
+}
+
+.ct {
+  font-weight: 900;
+  font-size: 34px;
+  color: #18da2a;
+}
+
+.content-container {
+  /* Espaço para o banner no topo */
+}
+
+header {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 1px;
+}
+
+.banner-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.white-section {
+  background-color: #ffffff;
+  border: none;
+}
+
+.white-section h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 42px;
+  line-height: 55px;
+}
+
+@media only screen and (max-width: 768px) {
+  .white-section h1 {
+    font-size: 21px;
+    line-height: 29px;
+    margin-top: 10px;
+  }
+}
+
+.tre-section {
+  background-color: #ffffff;
+  border: none;
+  padding: 14px;
+  margin-bottom: 20px;
+}
+
+.tre-section h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 42px;
+  line-height: 55px;
+}
+
+@media only screen and (max-width: 768px) {
+  .tre-section h1 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.black-section {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+}
+
+.black-section p {
+  font-size: 20px; /* Tamanho de fonte padrão para o elemento h1 na seção preta */
+}
+.black-section img{
+   width: 22em;
+    border-radius: 10px;
+        box-shadow: 13px 10px 16px -4px rgba(255, 255, 255, 0.5);
+}
+
+@media only screen and (max-width: 768px) {
+  .black-section p {
+    font-size: 18px;
+  }
+}
+p{
+  margin: 17px 2px;
+}
+img{
+    width: 22em;
+    height: 17em;
+    border-radius: 4px;
+    box-shadow: 13px 10px 16px -4px rgb(0 0 0 / 90%);
+}
+.offer-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 17px;
+  margin: 0 6px;
+}
+
+.offer-card img {
+  width: 149px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.offer-details {
+  margin-left: 20px;
+}
+
+.offer-details h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.offer-details p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.offer-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.offer-button {
+  background-color: #ff9b00;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 155, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 155, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 155, 0, 0);
+  }
+}
+
+
+.offer-button {
+  background-color: #ff9b00;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.offer-button:hover {
+  background-color: #cc0000;
+}
+.meu-botao {
+  background: linear-gradient(to left, red, purple);
+  color: white;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  animation: pulse 1.5s infinite;
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(245 0 255 / 65%);
+  }
+  70% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.hide {
+  display: none;
+}
+
+/* Alterar tamanho da fonte do banner em dispositivos móveis */
+@media only screen and (max-width: 768px) {
+  .banner-title {
+    font-size: 14px; /* Tamanho de fonte para dispositivos móveis */
+    line-height: 18px; /* Altura de linha para dispositivos móveis */
+  }
+  .black-section h1 {
+    font-size: 20px; /* Tamanho de fonte para o elemento h1 na seção preta em dispositivos móveis */
+  }
+  .ct1 {
+    color: #767460ba;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 1px;
+  }
+}
