@@ -79,5 +79,3 @@ var palavras = ["comprou o Avaliando Roupas", "Também adquiriu o Avaliando Roup
 
 // Agendar o primeiro pop-up para o próximo segundo
 setTimeout(exibirPopup, 1000);
-
-
