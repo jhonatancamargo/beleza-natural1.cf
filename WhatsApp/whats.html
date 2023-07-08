@@ -43,7 +43,13 @@
   <!-- Colar Código Typebot abaixo entre as tags <script>-->
  <script>
 
-
+const typebotInitScript = document.createElement("script");
+typebotInitScript.type = "module";
+typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.0/dist/web.js'
+  
+Typebot.initStandard({ typebot: "pro-" });
+`;
+document.body.append(typebotInitScript);
 
 </script>
 
