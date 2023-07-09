@@ -3,11 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WhatsApp</title>
+  <title>WhatsApp Web</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css'>
   <link rel='stylesheet' href='https://rawgit.com/marvelapp/devices.css/master/assets/devices.min.css'>
   <link rel="stylesheet" href="./style.css">
+  <!-- pixel facebook-->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '593863252816466');
+fbq('init', '#');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=593863252816466&ev=PageView&noscript=1"
+/></noscript>
+<!-- fim do pixel facebook -->
 
 </head>
 <body>
@@ -18,10 +37,10 @@
           <i class="zmdi zmdi-arrow-left"></i>
         </div>
         <div class="avatar">
-          <img src="https://conteudo.imguol.com.br/c/esporte/60/2022/08/03/iran-santana-o-luva-de-pedreiro-1659552598392_v2_450x600.jpg" alt="Avatar">
+          <img src="https://i.postimg.cc/tCvwJmnr/Design-sem-nome-3.png" alt="Avatar">
         </div>
         <div class="name">
-          <span>Luva de Pedreiro</span>
+          <span>Dra. Camila</span>
           <span class="status">online</span>
         </div>
         <div class="actions more">
@@ -47,7 +66,7 @@ const typebotInitScript = document.createElement("script");
 typebotInitScript.type = "module";
 typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.0/dist/web.js'
   
-Typebot.initStandard({ typebot: "69202020" });
+Typebot.initStandard({ typebot: "#" });
 `;
 document.body.append(typebotInitScript);
 
@@ -56,6 +75,18 @@ document.body.append(typebotInitScript);
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
 </body>
 </html>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
 
+  gtag('config', 'G-1DFMKE452Y')
+</script>
 
 
