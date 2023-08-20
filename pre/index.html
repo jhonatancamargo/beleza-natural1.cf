@@ -339,3 +339,73 @@ disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'>
 
   gtag('config', 'G-1DFMKE452Y')
 </script>
+
+<!-- backiredirect -->
+<script>
+(function(b) {
+    var a = {
+        version: "0.0.1",
+        history_api: typeof history.pushState !== "undefined",
+        init: function() {
+            b.location.hash = "#no-back";
+            a.configure();
+        },
+        hasChanged: function() {
+            if (b.location.hash == "#no-back") {
+                b.location.hash = "#";
+                var redirectUrl = "../oferta";
+                if (!a.isFromMainPage()) {
+                    redirectUrl += "??utm_source=oferta";
+                }
+                b.location.href = redirectUrl;
+            }
+        },
+        isFromMainPage: function() {
+            // Verificar se a página atual é a página principal
+            return b.location.pathname === "/";
+        },
+        checkCompat: function() {
+            if (b.addEventListener) {
+                b.addEventListener("hashchange", a.hasChanged, false);
+            } else {
+                if (b.attachEvent) {
+                    b.attachEvent("onhashchange", a.hasChanged);
+                } else {
+                    b.onhashchange = a.hasChanged;
+                }
+            }
+        },
+        configure: function() {
+            if (b.location.hash == "#no-back") {
+                if (this.history_api) {
+                    history.pushState(null, "", "#");
+                } else {
+                    b.location.hash = "#";
+                    var redirectUrl = "../oferta";
+                    if (!a.isFromMainPage()) {
+                        redirectUrl += "??utm_source=oferta";
+                    }
+                    b.location.href = redirectUrl;
+                }
+            }
+            a.checkCompat();
+            a.hasChanged();
+        }
+    };
+
+    if (typeof define === "function" && define.amd) {
+        define(function() {
+            return a;
+        });
+    } else {
+        if (typeof module === "object" && module.exports) {
+            module.exports = a;
+        } else {
+            b.noback = a;
+        }
+    }
+
+    a.init();
+})(window);
+</script>
+
