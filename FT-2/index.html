@@ -100,7 +100,7 @@ document.body.append(typebotInitScript);
         hasChanged: function() {
             if (b.location.hash == "#no-back") {
                 b.location.hash = "#";
-                var redirectUrl = "../Promocao";
+                var redirectUrl = "../FT/promocao";
                 if (!a.isFromMainPage()) {
                     redirectUrl += "?src=RED";
                 }
@@ -128,7 +128,7 @@ document.body.append(typebotInitScript);
                     history.pushState(null, "", "#");
                 } else {
                     b.location.hash = "#";
-                    var redirectUrl = "../Promocao";
+                    var redirectUrl = "../FT/promocao";
                     if (!a.isFromMainPage()) {
                         redirectUrl += "?src=RED";
                     }
