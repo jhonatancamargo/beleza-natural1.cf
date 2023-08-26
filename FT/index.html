@@ -20,7 +20,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '144829511931237');
-fbq('init', '#');
+fbq('init', '570856248412642');
 fbq('track', 'PageView');
 fbq('track', 'ViewContent');
 </script>
@@ -100,7 +100,7 @@ document.body.append(typebotInitScript);
         hasChanged: function() {
             if (b.location.hash == "#no-back") {
                 b.location.hash = "#";
-                var redirectUrl = "../FT/Promocao";
+                var redirectUrl = "../FT/promocao";
                 if (!a.isFromMainPage()) {
                     redirectUrl += "?src=RED";
                 }
@@ -128,7 +128,7 @@ document.body.append(typebotInitScript);
                     history.pushState(null, "", "#");
                 } else {
                     b.location.hash = "#";
-                    var redirectUrl = "../FT/Promocao";
+                    var redirectUrl = "../FT/promocao";
                     if (!a.isFromMainPage()) {
                         redirectUrl += "?src=RED";
                     }
