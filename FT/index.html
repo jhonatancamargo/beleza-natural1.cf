@@ -65,18 +65,16 @@ src="https://www.facebook.com/tr?id=144829511931237&ev=PageView&noscript=1"
   <!-- Colar Código Typebot abaixo entre as tags <script>-->
  <script>
 
-const typebotInitScript = document.createElement("script");
+cconst typebotInitScript = document.createElement("script");
 typebotInitScript.type = "module";
-typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1.13/dist/web.js'
+typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
   
-Typebot.initStandard({
-  typebot: "recon",
-  apiHost: "https://bot.whatsbot.cloud",
-});
+Typebot.initStandard({ typebot: "recon" });
 `;
 document.body.append(typebotInitScript);
 
-
+ </script>
+ <script>
     window.onload = function () {
         var links = document.getElementsByTagName("a");
         for (var i = 0, n = links.length; i < n; i++) {
